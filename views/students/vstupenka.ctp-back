@@ -1,0 +1,157 @@
+<?php
+/**
+ *
+ * PHP versions 4 and 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       cake
+ * @subpackage    cake.cake.console.libs.templates.skel.views.layouts
+ * @since         CakePHP(tm) v 0.10.0.1076
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<?php echo $this->Html->charset(); ?>
+	<title>
+		<?php __('Career Days 2011'); ?>
+		<?php echo $title_for_layout; ?>
+	</title>
+    <style type="text/css">
+        * {
+	margin:0;
+	padding:0;
+        color: black;
+}
+
+/** Tables **/
+table {
+	background: #fff;
+	border-right:0;
+	clear: both;
+	color: #333;
+	margin-bottom: 10px;
+	width: 100%;
+}
+th {
+	border:0;
+	border-bottom:2px solid #555;
+	text-align: left;
+	padding:4px;
+}
+th a {
+	display: block;
+	padding: 2px 4px;
+	text-decoration: none;
+}
+table tr td {
+	background: #fff;
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom:1px solid #ddd;
+}
+/*
+table tr:nth-child(2n) td {
+	background: #f5f5f5;
+}
+table .altrow td {
+	background: #f5f5f5;
+}*/
+
+
+#den1
+{
+    float: left;
+}
+
+#den2
+{
+    float: right;
+}
+
+#agenda div
+{
+    width: 49%;
+}
+
+p
+{
+    text-indent: 30px;
+    margin: 0px;
+    padding: 2px;
+}
+
+.twocolumns
+{
+    width: 48%
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+    width: 10px;
+    height: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="twocolumns left">
+        <div id="logo">
+            <?php echo $this->Html->image('logo-cd.png');?>
+        </div>
+        <div class="clear"></div>
+        <div id="agenda">
+            <?php echo $this->element('students/agenda');?>
+        </div>
+        
+    </div>
+    <div class="twocolumns right">
+        <div id="heading">
+            <h1>VSTUPENKA</h1>
+        </div>
+        <div class="clear"></div>
+        <div id="planek">
+            <?php echo $this->Html->image('diplomat-planek.png'); ?>
+        </div>
+        <div class="clear"></div>
+        <div id="mapa">
+            <?php echo $this->Html->image('mapka.png');?>
+            <p>Career Days se konají v hotelu Diplomat, který se nachází 100 metrů od stanice metra Dejvická.
+                Ve stanici vystup směrem k pohyblivým schodům a dej se smerem na ulici Evropská. Přesněji viz mapka.
+            </p>
+            <p><strong>Sleva Českých Drah:</strong><br />
+                Pro použití slevy stačí říct na kterékoliv pokladně ČD toto: <i>"Zpáteční jízdenku do Prahy, sleva VLAK+ na Career Days"</i>.
+                Dostaneš zpáteční lístek s 50% slevou. Na místě ti pak u infostánku dáme razítko, aby jsi měl(a) cestu zpět opravdu zadarmo!
+                Nezapomeň se tedy u nás zastavit.
+            </p>
+        </div>
+        <div class="clear"></div>
+        <div id="barcode">
+            <strong>Jméno a příjmení:</strong> <?php echo $student['User']['jmeno'].' '.$student['User']['prijmeni'];?><br />
+            <strong>Email:</strong> <?php echo $student['User']['email'];?><br />
+            <strong>Univerzita:</strong> <?php echo $student['School']['nazev']; ?><br />
+            <strong>Zaplaceno dnů:</strong> <?php echo $student['Student']['zaplaceno_dnu'];?><br />
+            <img src="/students/barcode" alt="Barcode" />
+        </div>
+    </div>
+</body>
+</html>

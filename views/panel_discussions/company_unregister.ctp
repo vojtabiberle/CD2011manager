@@ -1,0 +1,1 @@
+<h2>Byli jste odhlášeni z panelové diskuze.</h2>
